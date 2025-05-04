@@ -1,0 +1,26 @@
+:root {
+    --primary-color: #000000;
+    --background-color: #e6d4a3;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-family: "Comic Sans MS";
+}
+
+#weather-info {
+    margin: 200px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.audio-frame {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    gap: 10px;
+    
+    button {
+        height: 50px;
+        width: 50px;
+    }
+}

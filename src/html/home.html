@@ -11,7 +11,7 @@
         Your Weather Data
     </div>
     <div class="audio-frame">
-        <audio id="portal-music" src="/src/content/audio/orange%20and%20blue%20radio%20music.wav" type="audio/wav" loop></audio>
+        <audio id="audio" src="/src/content/audio/songs/01/Still%20Alive.wav" type="audio/wav"></audio>
         <button id="play-button">Play</button>
         <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
         <button id="pause-button">Pause</button>
@@ -21,17 +21,21 @@
     import * as Location from "/src/js/location.js";
     import * as Weather from "/src/js/weather.js";
     import * as Audio from "/src/js/audio.js"
+    import * as Utils from "/src/js/utils.js"
     
     const location = await Location.getLocation();
-    console.log(location);
     const weatherData = await Weather.getWeatherData(location);
-    console.log(weatherData);
     
+    const songs = await Utils.getSongs();
+    console.log(songs);
     Audio.init();
     document.querySelector("#weather-info").innerHTML = `
         Your current temperature: ${weatherData.main.temp}°C, feels like ${weatherData.main.feels_like}°C.<br>
         Conditions: ${weatherData.weather[0].description},<br>
         Wind: ${weatherData.wind.speed}m/s
         `;
+    
+    let weatherPending = true;
+    Weather.initWeatherUpdates(weatherPending);
 </script>
 </html>

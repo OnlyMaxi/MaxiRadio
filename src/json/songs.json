@@ -1,0 +1,22 @@
+{
+    "songs": [
+        {
+            "name": "Sample",
+            "artist": "Sample",
+            "dir": "/00",
+            "modifier": 0
+        },
+        {
+            "name": "Still Alive",
+            "artist": "Valve",
+            "dir": "/01",
+            "modifier": 0
+        },
+        {
+            "name": "More Than A Feeling",
+            "artist": "Boston",
+            "dir": "/02",
+            "modifier": 0
+        }
+    ]
+}
